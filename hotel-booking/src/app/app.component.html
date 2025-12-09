@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="text-center mt-3">🏨 Hotel Booking System</h1>
+
+  <!-- Section hôtels -->
+  <app-hotel></app-hotel>
+
+  <!-- Bouton pour voir les réservations -->
+  <div class="text-center my-4">
+    <button class="btn btn-outline-primary btn-lg" (click)="showBookings = !showBookings">
+      {{ showBookings ? 'Masquer les réservations' : 'Voir toutes les réservations' }}
+    </button>
+  </div>
+
+  <!-- Liste des réservations -->
+  <div *ngIf="showBookings">
+    <app-booking-list></app-booking-list>
+  </div>
+</div>

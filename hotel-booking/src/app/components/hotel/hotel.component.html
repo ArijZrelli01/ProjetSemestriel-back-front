@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-5 title">🏨 Liste des Hôtels Disponibles</h2>
+
+  <div class="row justify-content-center">
+    <div *ngFor="let hotel of hotels" class="col-md-4 col-sm-6 mb-4">
+      <div class="card hotel-card shadow-lg border-0">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-3 text-primary fw-bold">{{ hotel.name }}</h5>
+          <p class="card-text text-muted">
+            📍 <strong>Ville:</strong> {{ hotel.city }} <br>
+            💰 <strong>Prix/nuit:</strong> {{ hotel.pricePerNight }} DT
+          </p>
+          <button class="btn btn-outline-primary w-100" (click)="selectHotel(hotel.id)">
+            Réserver maintenant
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulaire réservation -->
+  <div class="booking-form-container mt-5" *ngIf="selectedHotelId">
+    <app-booking-form [hotelId]="selectedHotelId"></app-booking-form>
+  </div>
+</div>

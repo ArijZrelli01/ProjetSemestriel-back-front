@@ -1,0 +1,62 @@
+<div class="card mt-3 p-4 shadow-lg border-0 rounded-4 bg-light">
+  <h4 class="text-center mb-3 text-primary fw-bold">🛎️ Réserver cet hôtel</h4>
+
+  <div class="form-group mb-3">
+    <label class="fw-semibold">Numéro de téléphone</label>
+    <input class="form-control form-control-lg" [(ngModel)]="booking.phoneClient" name="phoneClient" placeholder="Ex: 51000000" required>
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="fw-semibold">Date d'arrivée</label>
+    <input type="date" class="form-control form-control-lg" [(ngModel)]="booking.startDate" name="startDate">
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="fw-semibold">Date de départ</label>
+    <input type="date" class="form-control form-control-lg" [(ngModel)]="booking.endDate" name="endDate">
+  </div>
+
+  <div class="form-group mb-3">
+    <label class="fw-semibold">Chambre</label>
+    <select class="form-select form-select-lg" [(ngModel)]="booking.roomNumber" name="roomNumber">
+      <option value="" disabled selected>-- Choisir une chambre --</option>
+      <option *ngFor="let room of rooms" [value]="room.number" [disabled]="!room.available">
+        {{ room.number }} - {{ room.type }} <span *ngIf="!room.available">(Indisponible)</span>
+      </option>
+    </select>
+  </div>
+
+  <button class="btn btn-gradient-primary w-100 mt-3 py-2 rounded-3 fw-bold" (click)="checkClient()">Réserver</button>
+</div>
+
+<!-- ✅ MODAL CLIENT -->
+<div class="modal fade show d-block" *ngIf="showModal" style="background: rgba(0,0,0,0.55);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title fw-semibold">👤 Ajouter un nouveau client</h5>
+        <button type="button" class="btn-close btn-close-white" (click)="closeModal()"></button>
+      </div>
+
+      <div class="modal-body bg-light">
+        <div class="mb-3">
+          <label class="fw-semibold">Nom complet</label>
+          <input class="form-control form-control-lg" [(ngModel)]="newClient.fullName" name="name" placeholder="Ex: Arij Zrelli">
+        </div>
+        <div class="mb-3">
+          <label class="fw-semibold">Email</label>
+          <input type="email" class="form-control form-control-lg" [(ngModel)]="newClient.email" name="email" placeholder="exemple@mail.com">
+        </div>
+        <div class="mb-3">
+          <label class="fw-semibold">Numéro de téléphone</label>
+          <input class="form-control form-control-lg" [(ngModel)]="newClient.phone" name="phone" placeholder="Ex: 51000000">
+        </div>
+      </div>
+
+      <div class="modal-footer bg-white rounded-bottom-4">
+        <button class="btn btn-outline-secondary px-4" (click)="closeModal()">Annuler</button>
+        <button class="btn btn-gradient-primary px-4 fw-bold" (click)="addNewClient()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.container {
+  max-width: 1100px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.filter-box {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 5px solid #0d6efd;
+}
+
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.table thead {
+  background: #0d6efd;
+  color: white;
+  font-size: 1rem;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f5ff;
+  transition: background 0.3s ease;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn-outline-danger {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.table-responsive {
+  border-radius: 15px;
+  background: white;
+}

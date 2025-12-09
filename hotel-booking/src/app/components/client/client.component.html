@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h3>👤 Liste des clients</h3>
+  <ul class="list-group">
+    <li *ngFor="let c of clients" class="list-group-item">
+      {{c.fullName}} ({{c.email}}) ({{c.phone}})
+    </li>
+  </ul>
+</div>

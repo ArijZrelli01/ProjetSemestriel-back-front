@@ -1,0 +1,44 @@
+/* Gradient button */
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-primary:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Form styling */
+.form-control, .form-select {
+  border-radius: 0.6rem;
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.15rem rgba(59, 130, 246, 0.25);
+}
+
+/* Modal animation */
+.modal.fade.show .modal-dialog {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+.modal-dialog {
+  transform: translateY(-20px);
+}
+
+/* Card hover */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
